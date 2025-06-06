@@ -18,7 +18,8 @@ const metodos = {
         "Trapecio",
         "Simpson 1/3 y 3/8",
         "Romberg y Richardson",
-        "Euler y Euler modificado"
+        "Euler y Euler modificado",
+        "Runge-Kutta"
     ]
 };
 
@@ -37,14 +38,15 @@ const descripciones = {
     "Trapecio": "Método de integración numérica que aproxima el área bajo una curva usando trapecios.",
     "Simpson 1/3 y 3/8": "Métodos de integración numérica más precisos que el del trapecio.",
     "Romberg y Richardson": "Métodos que refinan resultados de integración usando extrapolación.",
-    "Euler y Euler modificado": "Métodos numéricos para resolver ecuaciones diferenciales ordinarias."
+    "Euler y Euler modificado": "Métodos numéricos para resolver ecuaciones diferenciales ordinarias.",
+    "Runge-Kutta": "Método avanzado para resolver ecuaciones diferenciales ordinarias de manera más precisa que Euler."
 };
 
 const pdfs = {
     "Bisección": "assets/biseccion.pdf",
-    "Newton Raphson": "assets/Newton_raph.pdf",
+    "Newton Raphson": "assets/newton.pdf",
     "Secante": "assets/secante.pdf",
-    "Punto fijo": "assets/punto_fijo.pdf",
+    "Punto fijo": "assets/puntofijo.pdf",
     "Gauss Gauss-Jordan": "assets/gauss.pdf",
     "Gauss –Seidel y Jacobi": "assets/seidel_jacobi.pdf",
     "Montante": "assets/montante.pdf",
@@ -55,14 +57,15 @@ const pdfs = {
     "Trapecio": "assets/trapecio.pdf",
     "Simpson 1/3 y 3/8": "assets/simpson.pdf",
     "Romberg y Richardson": "assets/romberg.pdf",
-    "Euler y Euler modificado": "assets/euler.pdf"
+    "Euler y Euler modificado": "assets/euler.pdf",
+    "Runge-Kutta": "assets/runge_kutta.pdf"
 };
 
 const excels = {
     "Bisección": "assets/excels/biseccion.png",
-    "Newton Raphson": "assets/excels/newton_raph.png",
+    "Newton Raphson": "assets/excels/newton.png",
     "Secante": "assets/excels/secante.png",
-    "Punto fijo": "assets/excels/punto_fijo.png",
+    "Punto fijo": "assets/excels/puntofijo.png",
     "Gauss Gauss-Jordan": "assets/excels/gauss.png",
     "Gauss –Seidel y Jacobi": "assets/excels/seidel_jacobi.png",
     "Montante": "assets/excels/montante.png",
@@ -73,7 +76,8 @@ const excels = {
     "Trapecio": "assets/excels/trapecio.png",
     "Simpson 1/3 y 3/8": "assets/excels/simpson.png",
     "Romberg y Richardson": "assets/excels/romberg.png",
-    "Euler y Euler modificado": "assets/excels/euler.png"
+    "Euler y Euler modificado": "assets/excels/euler.png",
+    "Runge-Kutta": "assets/excels/runge_kutta.png"
 };
 
 function obtenerSufijo(parcial) {
