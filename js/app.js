@@ -60,9 +60,9 @@ const pdfs = {
 
 const excels = {
     "Bisección": "assets/excels/biseccion.png",
-    "Newton Raphson": "assets/excels/newton.png",
+    "Newton Raphson": "assets/excels/newton_raph.png",
     "Secante": "assets/excels/secante.png",
-    "Punto fijo": "assets/excels/puntofijo.png",
+    "Punto fijo": "assets/excels/punto_fijo.png",
     "Gauss Gauss-Jordan": "assets/excels/gauss.png",
     "Gauss –Seidel y Jacobi": "assets/excels/seidel_jacobi.png",
     "Montante": "assets/excels/montante.png",
