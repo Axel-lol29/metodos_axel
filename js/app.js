@@ -44,7 +44,7 @@ const descripciones = {
 
 const pdfs = {
     "Bisección": "assets/biseccion.pdf",
-    "Newton Raphson": "assets/newton.pdf",
+    "Newton Raphson": "assets/Newton_raph.pdf",
     "Secante": "assets/secante.pdf",
     "Punto fijo": "assets/puntofijo.pdf",
     "Gauss Gauss-Jordan": "assets/gauss.pdf",
@@ -63,7 +63,7 @@ const pdfs = {
 
 const excels = {
     "Bisección": "assets/excels/biseccion.png",
-    "Newton Raphson": "assets/excels/newton.png",
+    "Newton Raphson": "assets/excels/newton_raph.png",
     "Secante": "assets/excels/secante.png",
     "Punto fijo": "assets/excels/puntofijo.png",
     "Gauss Gauss-Jordan": "assets/excels/gauss.png",
