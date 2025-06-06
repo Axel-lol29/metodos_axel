@@ -97,34 +97,33 @@ function mostrarMetodo(nombre, parcial) {
 }
 
 function verPDF(nombre, parcial) {
-    const contenido = document.getElementById("contenido");
-
     let pdfSrc = "";
     if (nombre === "Bisección") {
         pdfSrc = "assets/biseccion.pdf";
     }
 
+    // Abrir el PDF en una nueva pestaña
+    window.open(pdfSrc, "_blank");
+
+    // Mostrar mensaje informativo en la página
+    const contenido = document.getElementById("contenido");
+
     const card = document.createElement("div");
     card.classList.add("card");
 
     const titulo = document.createElement("h3");
-    titulo.textContent = `${nombre} - PDF`;
+    titulo.textContent = `${nombre} - PDF abierto`;
 
-    const botonCerrar = document.createElement("button");
-    botonCerrar.textContent = "Cerrar PDF";
-    botonCerrar.style.marginBottom = "10px";
-    botonCerrar.addEventListener("click", () => mostrarMetodo(nombre, parcial));
+    const mensaje = document.createElement("p");
+    mensaje.textContent = "El PDF se abrió en una nueva pestaña.";
 
-    const iframe = document.createElement("iframe");
-    iframe.src = pdfSrc;
-    iframe.width = "100%";
-    iframe.height = "500px";
-    iframe.style.border = "2px solid #88c0d0";
-    iframe.style.borderRadius = "8px";
+    const botonVolver = document.createElement("button");
+    botonVolver.textContent = "Volver";
+    botonVolver.addEventListener("click", () => mostrarMetodo(nombre, parcial));
 
     card.appendChild(titulo);
-    card.appendChild(botonCerrar);
-    card.appendChild(iframe);
+    card.appendChild(mensaje);
+    card.appendChild(botonVolver);
 
     contenido.innerHTML = "";
     contenido.appendChild(card);
@@ -137,6 +136,7 @@ function mostrarMenu() {
     contenido.innerHTML = "";
 }
 
+// Activar botones principales al cargar la página
 document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("btnParcial1").addEventListener("click", () => mostrarParcial(1));
     document.getElementById("btnParcial2").addEventListener("click", () => mostrarParcial(2));
