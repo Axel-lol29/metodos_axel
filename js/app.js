@@ -47,7 +47,7 @@ const pdfs = {
     "Newton Raphson": "assets/Newton_raph.pdf",
     "Secante": "assets/secante.pdf",
     "Punto fijo": "assets/punto_fijo.pdf",
-    "Gauss Gauss-Jordan": "assets/gauss.pdf",
+    "Gauss Gauss-Jordan": "assets/metodogauss.pdf",
     "Gauss –Seidel y Jacobi": "assets/seidel_jacobi.pdf",
     "Montante": "assets/montante.pdf",
     "Interpolación y Método de Lagrange": "assets/lagrange.pdf",
