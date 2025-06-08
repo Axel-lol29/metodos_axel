@@ -31,15 +31,15 @@ const descripciones = {
     "Gauss Gauss-Jordan": "Técnica de eliminación para resolver sistemas de ecuaciones lineales de forma matricial.",
     "Gauss –Seidel y Jacobi": "Métodos iterativos para resolver sistemas de ecuaciones lineales.",
     "Montante": "Método para resolver sistemas lineales mediante determinantes.",
-    "Interpolación y Método de Lagrange": "Técnicas para estimar valores entre puntos conocidos de una función.",
-    "Regresión lineal y regresión lineal múltiple": "Métodos estadísticos para modelar la relación entre variables.",
-    "Regresión polinomial": "Extensión de la regresión lineal para ajustar datos con un polinomio.",
-    "Diferencias divididas": "Técnica para la interpolación basada en diferencias sucesivas.",
-    "Trapecio": "Método de integración numérica que aproxima el área bajo una curva usando trapecios.",
-    "Simpson 1/3 y 3/8": "Métodos de integración numérica más precisos que el del trapecio.",
-    "Romberg y Richardson": "Métodos que refinan resultados de integración usando extrapolación.",
-    "Euler y Euler modificado": "Métodos numéricos para resolver ecuaciones diferenciales ordinarias.",
-    "Runge-Kutta": "Método avanzado para resolver ecuaciones diferenciales ordinarias de manera más precisa que Euler."
+    "Interpolación y Método de Lagrange": "Método para encontrar un polinomio que pase por un conjunto de puntos dados.",
+    "Regresión lineal y regresión lineal múltiple": "La regresión lineal analiza la relación entre dos variables. La múltiple, entre varias variables independientes y una dependiente.",
+    "Regresión polinomial": "Modelo que ajusta una relación no lineal entre la variable independiente y la dependiente mediante un polinomio.",
+    "Diferencias divididas": "Método de interpolación que permite construir un polinomio que pase por puntos dados, usando una tabla de diferencias.",
+    "Trapecio": "Técnica de integración numérica que aproxima el área bajo la curva como una serie de trapecios.",
+    "Simpson 1/3 y 3/8": "Métodos que aproximan la integral de una función usando polinomios de segundo y tercer grado.",
+    "Romberg y Richardson": "Técnicas que mejoran la precisión de la integración numérica combinando estimaciones previas.",
+    "Euler y Euler modificado": "Métodos para aproximar soluciones de ecuaciones diferenciales ordinarias usando pasos discretos.",
+    "Runge-Kutta": "Método numérico para resolver ecuaciones diferenciales ordinarias, más preciso que los métodos de Euler."
 };
 
 const pdfs = {
@@ -47,7 +47,7 @@ const pdfs = {
     "Newton Raphson": "assets/Newton_raph.pdf",
     "Secante": "assets/secante.pdf",
     "Punto fijo": "assets/punto_fijo.pdf",
-    "Gauss Gauss-Jordan": "assets/metodogauss.pdf",
+    "Gauss Gauss-Jordan": "assets/gauss.pdf",
     "Gauss –Seidel y Jacobi": "assets/seidel_jacobi.pdf",
     "Montante": "assets/montante.pdf",
     "Interpolación y Método de Lagrange": "assets/lagrange.pdf",
@@ -66,7 +66,6 @@ const excels = {
     "Newton Raphson": "assets/excels/newton_raph.png",
     "Secante": "assets/excels/secante.png",
     "Punto fijo": "assets/excels/punto_fijo.png",
-    "Gauss Gauss-Jordan": "assets/excels/gauss.png",
     "Gauss –Seidel y Jacobi": "assets/excels/seidel_jacobi.png",
     "Montante": "assets/excels/montante.png",
     "Interpolación y Método de Lagrange": "assets/excels/lagrange.png",
@@ -133,10 +132,6 @@ function mostrarMetodo(nombre, parcial) {
         if (pdfSrc) window.open(pdfSrc, '_blank');
     });
 
-    const btnExcel = document.createElement("button");
-    btnExcel.textContent = "Ver Excel";
-    btnExcel.addEventListener("click", () => mostrarExcel(nombre, parcial));
-
     const btnVolver = document.createElement("button");
     btnVolver.textContent = "Volver";
     btnVolver.addEventListener("click", () => mostrarParcial(parcial));
@@ -144,9 +139,15 @@ function mostrarMetodo(nombre, parcial) {
     card.appendChild(titulo);
     card.appendChild(texto);
     card.appendChild(btnPDF);
-    card.appendChild(btnExcel);
-    card.appendChild(btnVolver);
 
+    if (excels[nombre]) {
+        const btnExcel = document.createElement("button");
+        btnExcel.textContent = "Ver Excel";
+        btnExcel.addEventListener("click", () => mostrarExcel(nombre, parcial));
+        card.appendChild(btnExcel);
+    }
+
+    card.appendChild(btnVolver);
     contenido.appendChild(card);
 }
 
