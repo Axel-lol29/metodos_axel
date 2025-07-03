@@ -66,7 +66,6 @@ const excels = {
     "Newton Raphson": "assets/excels/newton_raph.png",
     "Secante": "assets/excels/secante.png",
     "Punto fijo": "assets/excels/punto_fijo.png",
-    "Gauss –Seidel y Jacobi": "assets/excels/seidel_jacobi.png",
     "Montante": "assets/excels/montante.png",
     "Interpolación y Método de Lagrange": "assets/excels/lagrange.png",
     "Regresión lineal y regresión lineal múltiple": "assets/excels/regresion.png",
