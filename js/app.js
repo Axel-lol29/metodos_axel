@@ -48,7 +48,7 @@ const pdfs = {
     "Secante": "assets/secante.pdf",
     "Punto fijo": "assets/punto_fijo.pdf",
     "Gauss Gauss-Jordan": "assets/metodogauss.pdf",
-    "Gauss –Seidel y Jacobi": "assets/gauss-seidel.pdf",
+    "Gauss –Seidel y Jacobi": "assets/gauss_seidel.pdf",
     "Montante": "assets/montante.pdf",
     "Interpolación y Método de Lagrange": "assets/lagrange.pdf",
     "Regresión lineal y regresión lineal múltiple": "assets/regresion.pdf",
