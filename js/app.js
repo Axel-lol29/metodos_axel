@@ -138,6 +138,16 @@ function mostrarMetodo(nombre, parcial) {
     card.appendChild(texto);
     card.appendChild(btnPDF);
 
+    if (nombre === "Interpolación y Método de Lagrange" || nombre.toLowerCase().includes("interpolación")) {
+        const btnPres = document.createElement("button");
+        btnPres.textContent = "Ver Presentación";
+        btnPres.addEventListener("click", () => {
+            const pdfPres = "assets/inter_lagrange_presentacion.pdf";
+            window.open(pdfPres, '_blank');
+        });
+        card.appendChild(btnPres);
+    }
+
     if (excels[nombre]) {
         const btnExcel = document.createElement("button");
         btnExcel.textContent = "Ver Excel";
