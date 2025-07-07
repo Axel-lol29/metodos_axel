@@ -68,7 +68,7 @@ const excels = {
     "Punto fijo": "assets/excels/punto_fijo.png",
     "Regresión lineal y regresión lineal múltiple": {
         simple: "assets/excels/regresion_simple.png",
-        multiple: "assets/excels/regresion_multiple.png"
+        multiple: "assets/excels/regre_multiple.png"
     },
     "Regresión polinomial": "assets/excels/regresion_polinomial.png",
     "Diferencias divididas": "assets/excels/diferencias.png",
