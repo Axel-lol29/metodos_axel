@@ -66,7 +66,10 @@ const excels = {
     "Newton Raphson": "assets/excels/newton_raph.png",
     "Secante": "assets/excels/secante.png",
     "Punto fijo": "assets/excels/punto_fijo.png",
-    "Regresión lineal y regresión lineal múltiple": "assets/excels/regresion_simple.png",
+    "Regresión lineal y regresión lineal múltiple": {
+        simple: "assets/excels/regresion_simple.png",
+        multiple: "assets/excels/regresion_multiple.png"
+    },
     "Regresión polinomial": "assets/excels/regresion_polinomial.png",
     "Diferencias divididas": "assets/excels/diferencias.png",
     "Trapecio": "assets/excels/trapecio.png",
@@ -147,7 +150,18 @@ function mostrarMetodo(nombre, parcial) {
         card.appendChild(btnPres);
     }
 
-    if (excels[nombre]) {
+    if (nombre === "Regresión lineal y regresión lineal múltiple") {
+        const btnSimple = document.createElement("button");
+        btnSimple.textContent = "Excel Simple";
+        btnSimple.addEventListener("click", () => mostrarExcel(nombre, parcial, "simple"));
+
+        const btnMultiple = document.createElement("button");
+        btnMultiple.textContent = "Excel Múltiple";
+        btnMultiple.addEventListener("click", () => mostrarExcel(nombre, parcial, "multiple"));
+
+        card.appendChild(btnSimple);
+        card.appendChild(btnMultiple);
+    } else if (excels[nombre]) {
         const btnExcel = document.createElement("button");
         btnExcel.textContent = "Ver Excel";
         btnExcel.addEventListener("click", () => mostrarExcel(nombre, parcial));
@@ -158,7 +172,7 @@ function mostrarMetodo(nombre, parcial) {
     contenido.appendChild(card);
 }
 
-function mostrarExcel(nombre, parcial) {
+function mostrarExcel(nombre, parcial, tipo = null) {
     const contenido = document.getElementById("contenido");
     contenido.innerHTML = "";
 
@@ -169,7 +183,15 @@ function mostrarExcel(nombre, parcial) {
     titulo.textContent = `${nombre} - Excel`;
 
     const img = document.createElement("img");
-    img.src = excels[nombre] || "";
+    let src = "";
+
+    if (nombre === "Regresión lineal y regresión lineal múltiple" && tipo) {
+        src = excels[nombre][tipo];
+    } else {
+        src = excels[nombre];
+    }
+
+    img.src = src || "";
     img.alt = `Aquí está el excel de un ejercicio`;
     img.style.width = "100%";
     img.style.maxWidth = "600px";
