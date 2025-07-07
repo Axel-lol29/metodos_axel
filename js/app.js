@@ -142,7 +142,7 @@ function mostrarMetodo(nombre, parcial) {
         const btnPres = document.createElement("button");
         btnPres.textContent = "Ver Presentación";
         btnPres.addEventListener("click", () => {
-            const pdfPres = "assets/interpolación_lagrange.pdf";
+            const pdfPres = "assets/interpola_lagrange.pdf";
             window.open(pdfPres, '_blank');
         });
         card.appendChild(btnPres);
