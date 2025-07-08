@@ -51,7 +51,7 @@ const pdfs = {
     "Gauss –Seidel y Jacobi": "assets/gauss_seidel.pdf",
     "Montante": "assets/montante.pdf",
     "Interpolación y Método de Lagrange": "assets/inter_lagrange.pdf",
-    "Regresión lineal y regresión lineal múltiple": "assets/regre_simple.pdf",
+    "Regresión lineal y regresión lineal múltiple": "assets/regresimpl_mult.pdf",
     "Regresión polinomial": "assets/regresion_polinomial.pdf",
     "Diferencias divididas": "assets/diferencias.pdf",
     "Trapecio": "assets/trapecio.pdf",
