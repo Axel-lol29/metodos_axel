@@ -11,9 +11,10 @@ const metodos = {
         "Montante",
         "Interpolación y Método de Lagrange",
         "Regresión lineal y regresión lineal múltiple",
-        "Regresión polinomial"
+
     ],
     3: [
+        "Regresión polinomial",
         "Diferencias divididas",
         "Trapecio",
         "Simpson 1/3 y 3/8",
