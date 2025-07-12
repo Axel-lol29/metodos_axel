@@ -33,7 +33,7 @@ const descripciones = {
     "Gauss –Seidel y Jacobi": "Métodos iterativos para resolver sistemas de ecuaciones lineales.",
     "Montante": "Método para resolver sistemas lineales mediante determinantes.",
     "Interpolación y Método de Lagrange": "Método para encontrar un polinomio que pase por un conjunto de puntos dados.",
-    "Regresión lineal y regresión lineal múltiple": "La regresión lineal analiza la relación entre dos variables. La múltiple, entre varias variables independientes y una dependiente.",
+    "Regresión lineal simple y múltiple": "La regresión lineal analiza la relación entre dos variables. La múltiple, entre varias variables independientes y una dependiente.",
     "Regresión polinomial": "Modelo que ajusta una relación no lineal entre la variable independiente y la dependiente mediante un polinomio.",
     "Diferencias divididas": "Método de interpolación que permite construir un polinomio que pase por puntos dados, usando una tabla de diferencias.",
     "Trapecio": "Técnica de integración numérica que aproxima el área bajo la curva como una serie de trapecios.",
@@ -52,7 +52,7 @@ const pdfs = {
     "Gauss –Seidel y Jacobi": "assets/gauss_seidel.pdf",
     "Montante": "assets/montante.pdf",
     "Interpolación y Método de Lagrange": "assets/inter_lagrange.pdf",
-    "Regresión lineal y regresión lineal múltiple": "assets/regresimpl_mult.pdf",
+    "Regresión lineal simple y múltiple": "assets/regresimpl_mult.pdf",
     "Regresión polinomial": "assets/regresion_polinomial.pdf",
     "Diferencias divididas": "assets/diferencias.pdf",
     "Trapecio": "assets/trapecio.pdf",
@@ -67,7 +67,7 @@ const excels = {
     "Newton Raphson": "assets/excels/newton_raph.png",
     "Secante": "assets/excels/secante.png",
     "Punto fijo": "assets/excels/punto_fijo.png",
-    "Regresión lineal y regresión lineal múltiple": {
+    "Regresión lineal simple y múltiple": {
         simple: "assets/excels/regresion_simple.png",
         multiple: "assets/excels/regre_multiple.png"
     },
@@ -151,7 +151,7 @@ function mostrarMetodo(nombre, parcial) {
         card.appendChild(btnPres);
     }
 
-    if (nombre === "Regresión lineal y regresión lineal múltiple") {
+    if (nombre === "Regresión lineal simple y múltiple") {
         const btnSimple = document.createElement("button");
         btnSimple.textContent = "Excel Simple";
         btnSimple.addEventListener("click", () => mostrarExcel(nombre, parcial, "simple"));
@@ -186,7 +186,7 @@ function mostrarExcel(nombre, parcial, tipo = null) {
     const img = document.createElement("img");
     let src = "";
 
-    if (nombre === "Regresión lineal y regresión lineal múltiple" && tipo) {
+    if (nombre === "Regresión lineal simple y múltiple" && tipo) {
         src = excels[nombre][tipo];
     } else {
         src = excels[nombre];
