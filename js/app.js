@@ -10,7 +10,7 @@ const metodos = {
         "Gauss –Seidel y Jacobi",
         "Montante",
         "Interpolación y Método de Lagrange",
-        "Regresión lineal y regresión lineal múltiple",
+        "Regresión lineal simple y múltiple",
 
     ],
     3: [
