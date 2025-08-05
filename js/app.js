@@ -54,11 +54,11 @@ const pdfs = {
     "Interpolación y Método de Lagrange": "assets/inter_lagrange.pdf",
     "Regresión lineal simple y múltiple": "assets/regresimpl_mult.pdf",
     "Regresión polinomial": "assets/regresion_polinomial.pdf",
-    "Diferencias divididas": "assets/diferencias.pdf",
-    "Trapecio": "assets/trapecio.pdf",
-    "Simpson 1/3 y 3/8": "assets/simpson.pdf",
-    "Romberg y Richardson": "assets/romberg.pdf",
-    "Euler y Euler modificado": "assets/euler.pdf",
+    "Diferencias divididas": "assets/diferen_divididas.pdf",
+    "Trapecio": "assets/Trapecio.pdf",
+    "Simpson 1/3 y 3/8": "assets/Simpson.pdf",
+    "Romberg y Richardson": "assets/Romberg.pdf",
+    "Euler y Euler modificado": "assets/Euler.pdf",
     "Runge-Kutta": "assets/runge_kutta.pdf"
 };
 
