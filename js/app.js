@@ -59,7 +59,7 @@ const pdfs = {
     "Simpson 1/3 y 3/8": "assets/Simpson.pdf",
     "Romberg y Richardson": "assets/Romberg.pdf",
     "Euler y Euler modificado": "assets/Euler.pdf",
-    "Runge-Kutta": "assets/runge_kutta.pdf"
+    "Runge-Kutta": "assets/Runge_kutta.pdf"
 };
 
 const excels = {
