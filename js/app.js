@@ -169,6 +169,24 @@ function mostrarMetodo(nombre, parcial) {
         card.appendChild(btnExcel);
     }
 
+    if (nombre === "Trapecio") {
+        const btnSimple = document.createElement("button");
+        btnSimple.textContent = "Excel Simple";
+        btnSimple.addEventListener("click", () => mostrarExcel(nombre, parcial, "simple"));
+
+        const btnMultiple = document.createElement("button");
+        btnMultiple.textContent = "Excel Múltiple";
+        btnMultiple.addEventListener("click", () => mostrarExcel(nombre, parcial, "multiple"));
+
+        card.appendChild(btnSimple);
+        card.appendChild(btnMultiple);
+    } else if (excels[nombre]) {
+        const btnExcel = document.createElement("button");
+        btnExcel.textContent = "Ver Excel";
+        btnExcel.addEventListener("click", () => mostrarExcel(nombre, parcial));
+        card.appendChild(btnExcel);
+    }
+
     card.appendChild(btnVolver);
     contenido.appendChild(card);
 }
