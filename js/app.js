@@ -72,7 +72,7 @@ const excels = {
         multiple: "assets/excels/regre_multiple.png"
     },
     "Regresión polinomial": "assets/excels/regresion_polinomial.png",
-    "Diferencias divididas": "assets/excels/diferencias.png",
+    "Diferencias divididas": "assets/excels/dif_divididas.png",
     "Trapecio": "assets/excels/trapecio.png",
     "Simpson 1/3 y 3/8": "assets/excels/simpson.png",
     "Romberg y Richardson": "assets/excels/romberg.png",
