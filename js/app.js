@@ -74,7 +74,7 @@ const excels = {
     "Regresión polinomial": "assets/excels/regresion_polinomial.png",
     "Diferencias divididas": "assets/excels/dif_divididas.png",
     "Trapecio": {
-        simple: "assets/excels/trapecio.png",
+        simple: "assets/excels/trapecio2.png",
         compuesto: "assets/excels/trapecio1.png"
     },
     "Simpson 1/3 y 3/8": "assets/excels/simpson.png",
