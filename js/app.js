@@ -75,7 +75,7 @@ const excels = {
     "Diferencias divididas": "assets/excels/dif_divididas.png",
     "Trapecio": {
         simple: "assets/excels/trapecio.png",
-        multiple: "assets/excels/trapecio.png"
+        compuesto: "assets/excels/trapecio1.png"
     },
     "Simpson 1/3 y 3/8": "assets/excels/simpson.png",
     "Romberg y Richardson": "assets/excels/romberg.png",
@@ -177,12 +177,12 @@ function mostrarMetodo(nombre, parcial) {
         btnSimple.textContent = "Excel Simple";
         btnSimple.addEventListener("click", () => mostrarExcel(nombre, parcial, "simple"));
 
-        const btnMultiple = document.createElement("button");
-        btnMultiple.textContent = "Excel Múltiple";
-        btnMultiple.addEventListener("click", () => mostrarExcel(nombre, parcial, "multiple"));
+        const btnCompuesto = document.createElement("button");
+        btnCompuesto.textContent = "Excel Compuesto";
+        btnCompuesto.addEventListener("click", () => mostrarExcel(nombre, parcial, "compuesto"));
 
         card.appendChild(btnSimple);
-        card.appendChild(btnMultiple);
+        card.appendChild(btnCompuesto);
     } else if (excels[nombre]) {
         const btnExcel = document.createElement("button");
         btnExcel.textContent = "Ver Excel";
