@@ -55,7 +55,7 @@ const pdfs = {
     "Simpson 1/3 y 3/8": "assets/Simpson.pdf",
     "Romberg y Richardson": "assets/Romberg.pdf",
     "Euler y Euler modificado": "assets/Euler.pdf",
-    "Runge-Kutta": "assets/Runge_kutta.pdf"
+    "Runge Kutta": "assets/Runge_kutta.pdf"
 };
 
 const excels = {
@@ -78,7 +78,7 @@ const descargasExcel = {
     "Simpson 1/3 y 3/8": "assets/excel_descargas/simpson.xlsx",
     "Romberg y Richardson": "assets/excel_descargas/romberg.xlsx",
     "Euler y Euler modificado": "assets/excel_descargas/Euler.xlsx",
-    "Runge-Kutta": "assets/excel_descargas/runge.xlsx"
+    "Runge Kutta": "assets/excel_descargas/runge.xlsx"
 };
 
 function obtenerSufijo(parcial) {
