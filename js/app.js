@@ -77,8 +77,8 @@ const excels = {
 const descargasExcel = {
     "Simpson 1/3 y 3/8": "assets/excel_descargas/simpson.xlsx",
     "Romberg y Richardson": "assets/excel_descargas/romberg.xlsx",
-    "Euler y Euler modificado": "assets/excel_descargas/euler.xlsx",
-    "Runge-Kutta": "assets/excel_descargas/runge_kutta.xlsx"
+    "Euler y Euler modificado": "assets/excel_descargas/Euler.xlsx",
+    "Runge-Kutta": "assets/excel_descargas/Runge_kutta.xlsx"
 };
 
 function obtenerSufijo(parcial) {
