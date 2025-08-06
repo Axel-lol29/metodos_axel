@@ -73,7 +73,10 @@ const excels = {
     },
     "Regresión polinomial": "assets/excels/regresion_polinomial.png",
     "Diferencias divididas": "assets/excels/dif_divididas.png",
-    "Trapecio": "assets/excels/trapecio.png",
+    "Trapecio": {
+        simple: "assets/excels/trapecio.png",
+        multiple: "assets/excels/trapecio.png"
+    },
     "Simpson 1/3 y 3/8": "assets/excels/simpson.png",
     "Romberg y Richardson": "assets/excels/romberg.png",
     "Euler y Euler modificado": "assets/excels/euler.png",
@@ -205,6 +208,12 @@ function mostrarExcel(nombre, parcial, tipo = null) {
     let src = "";
 
     if (nombre === "Regresión lineal simple y múltiple" && tipo) {
+        src = excels[nombre][tipo];
+    } else {
+        src = excels[nombre];
+    }
+
+    if (nombre === "Trapecio" && tipo) {
         src = excels[nombre][tipo];
     } else {
         src = excels[nombre];
