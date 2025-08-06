@@ -165,11 +165,6 @@ function mostrarMetodo(nombre, parcial) {
 
         card.appendChild(btnSimple);
         card.appendChild(btnMultiple);
-    } else if (excels[nombre]) {
-        const btnExcel = document.createElement("button");
-        btnExcel.textContent = "Ver Excel";
-        btnExcel.addEventListener("click", () => mostrarExcel(nombre, parcial));
-        card.appendChild(btnExcel);
     }
 
     if (nombre === "Trapecio") {
@@ -183,11 +178,6 @@ function mostrarMetodo(nombre, parcial) {
 
         card.appendChild(btnSimple);
         card.appendChild(btnCompuesto);
-    } else if (excels[nombre]) {
-        const btnExcel = document.createElement("button");
-        btnExcel.textContent = "Ver Excel";
-        btnExcel.addEventListener("click", () => mostrarExcel(nombre, parcial));
-        card.appendChild(btnExcel);
     }
 
     card.appendChild(btnVolver);
