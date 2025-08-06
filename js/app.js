@@ -11,10 +11,8 @@ const metodos = {
         "Montante",
         "Interpolación y Método de Lagrange",
         "Regresión lineal simple y múltiple",
-
     ],
     3: [
-        "Regresión polinomial",
         "Diferencias divididas",
         "Trapecio",
         "Simpson 1/3 y 3/8",
@@ -34,7 +32,6 @@ const descripciones = {
     "Montante": "Método para resolver sistemas lineales mediante determinantes.",
     "Interpolación y Método de Lagrange": "Método para encontrar un polinomio que pase por un conjunto de puntos dados.",
     "Regresión lineal simple y múltiple": "La regresión lineal analiza la relación entre dos variables. La múltiple, entre varias variables independientes y una dependiente.",
-    "Regresión polinomial": "Modelo que ajusta una relación no lineal entre la variable independiente y la dependiente mediante un polinomio.",
     "Diferencias divididas": "Método de interpolación que permite construir un polinomio que pase por puntos dados, usando una tabla de diferencias.",
     "Trapecio": "Técnica de integración numérica que aproxima el área bajo la curva como una serie de trapecios.",
     "Simpson 1/3 y 3/8": "Métodos que aproximan la integral de una función usando polinomios de segundo y tercer grado.",
@@ -53,7 +50,6 @@ const pdfs = {
     "Montante": "assets/montante.pdf",
     "Interpolación y Método de Lagrange": "assets/inter_lagrange.pdf",
     "Regresión lineal simple y múltiple": "assets/regresimpl_mult.pdf",
-    "Regresión polinomial": "assets/regresion_polinomial.pdf",
     "Diferencias divididas": "assets/diferen_divididas.pdf",
     "Trapecio": "assets/Trapecio.pdf",
     "Simpson 1/3 y 3/8": "assets/Simpson.pdf",
@@ -71,16 +67,18 @@ const excels = {
         simple: "assets/excels/regresion_simple.png",
         multiple: "assets/excels/regre_multiple.png"
     },
-    "Regresión polinomial": "assets/excels/regresion_polinomial.png",
     "Diferencias divididas": "assets/excels/dif_divididas.png",
     "Trapecio": {
         simple: "assets/excels/trapecio2.png",
         compuesto: "assets/excels/trapecio1.png"
-    },
-    "Simpson 1/3 y 3/8": "assets/excels/simpson.png",
-    "Romberg y Richardson": "assets/excels/romberg.png",
-    "Euler y Euler modificado": "assets/excels/euler.png",
-    "Runge-Kutta": "assets/excels/runge_kutta.png"
+    }
+};
+
+const descargasExcel = {
+    "Simpson 1/3 y 3/8": "assets/excel_descargas/simpson.xlsx",
+    "Romberg y Richardson": "assets/excel_descargas/romberg.xlsx",
+    "Euler y Euler modificado": "assets/excel_descargas/euler.xlsx",
+    "Runge-Kutta": "assets/excel_descargas/runge_kutta.xlsx"
 };
 
 function obtenerSufijo(parcial) {
@@ -97,13 +95,12 @@ function mostrarParcial(parcial) {
     document.getElementById("menu").classList.add("hidden");
 
     contenido.innerHTML = `
-    <h2>${parcial}${sufijo} Parcial</h2>
-    <ol id="lista-metodos"></ol>
-    <button id="volverMenu">Volver</button>
-  `;
+        <h2>${parcial}${sufijo} Parcial</h2>
+        <ol id="lista-metodos"></ol>
+        <button id="volverMenu">Volver</button>
+    `;
 
     const lista = document.getElementById("lista-metodos");
-
     metodos[parcial].forEach((metodo) => {
         const li = document.createElement("li");
         li.textContent = metodo;
@@ -144,7 +141,7 @@ function mostrarMetodo(nombre, parcial) {
     card.appendChild(texto);
     card.appendChild(btnPDF);
 
-    if (nombre === "Interpolación y Método de Lagrange" || nombre.toLowerCase().includes("interpolación")) {
+    if (nombre === "Interpolación y Método de Lagrange") {
         const btnPres = document.createElement("button");
         btnPres.textContent = "Ver Presentación";
         btnPres.addEventListener("click", () => {
@@ -180,6 +177,18 @@ function mostrarMetodo(nombre, parcial) {
         card.appendChild(btnCompuesto);
     }
 
+    if (descargasExcel[nombre]) {
+        const btnDescargar = document.createElement("button");
+        btnDescargar.textContent = "Descargar Excel";
+        btnDescargar.addEventListener("click", () => {
+            const link = document.createElement("a");
+            link.href = descargasExcel[nombre];
+            link.download = nombre + ".xlsx";
+            link.click();
+        });
+        card.appendChild(btnDescargar);
+    }
+
     card.appendChild(btnVolver);
     contenido.appendChild(card);
 }
@@ -199,11 +208,7 @@ function mostrarExcel(nombre, parcial, tipo = null) {
 
     if (nombre === "Regresión lineal simple y múltiple" && tipo) {
         src = excels[nombre][tipo];
-    } else {
-        src = excels[nombre];
-    }
-
-    if (nombre === "Trapecio" && tipo) {
+    } else if (nombre === "Trapecio" && tipo) {
         src = excels[nombre][tipo];
     } else {
         src = excels[nombre];
