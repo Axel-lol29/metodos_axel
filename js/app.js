@@ -71,7 +71,11 @@ const excels = {
     "Trapecio": {
         simple: "assets/excels/trapecio2.png",
         compuesto: "assets/excels/trapecio1.png"
-    }
+    },
+    "Simpson 1/3 y 3/8": "assets/excels/simpson.png",
+    "Romberg y Richardson": "assets/excels/romberg.png",
+    "Euler y Euler modificado": "assets/excels/euler.png",
+    "Runge-Kutta": "assets/excels/runge_kutta.png"
 };
 
 const descargasExcel = {
@@ -141,6 +145,7 @@ function mostrarMetodo(nombre, parcial) {
     card.appendChild(texto);
     card.appendChild(btnPDF);
 
+    // Caso especial para Interpolación
     if (nombre === "Interpolación y Método de Lagrange") {
         const btnPres = document.createElement("button");
         btnPres.textContent = "Ver Presentación";
@@ -151,32 +156,44 @@ function mostrarMetodo(nombre, parcial) {
         card.appendChild(btnPres);
     }
 
-    if (nombre === "Regresión lineal simple y múltiple") {
-        const btnSimple = document.createElement("button");
-        btnSimple.textContent = "Excel Simple";
-        btnSimple.addEventListener("click", () => mostrarExcel(nombre, parcial, "simple"));
+    // Mostrar botones de Excel según corresponda
+    // Solo mostrar "Ver Excel" si no tiene descarga disponible
+    if (excels[nombre] && !descargasExcel[nombre]) {
+        if (typeof excels[nombre] === 'object') {
+            // Casos con múltiples Excels
+            if (nombre === "Regresión lineal simple y múltiple") {
+                const btnSimple = document.createElement("button");
+                btnSimple.textContent = "Excel Simple";
+                btnSimple.addEventListener("click", () => mostrarExcel(nombre, parcial, "simple"));
 
-        const btnMultiple = document.createElement("button");
-        btnMultiple.textContent = "Excel Múltiple";
-        btnMultiple.addEventListener("click", () => mostrarExcel(nombre, parcial, "multiple"));
+                const btnMultiple = document.createElement("button");
+                btnMultiple.textContent = "Excel Múltiple";
+                btnMultiple.addEventListener("click", () => mostrarExcel(nombre, parcial, "multiple"));
 
-        card.appendChild(btnSimple);
-        card.appendChild(btnMultiple);
+                card.appendChild(btnSimple);
+                card.appendChild(btnMultiple);
+            } else if (nombre === "Trapecio") {
+                const btnSimple = document.createElement("button");
+                btnSimple.textContent = "Excel Simple";
+                btnSimple.addEventListener("click", () => mostrarExcel(nombre, parcial, "simple"));
+
+                const btnCompuesto = document.createElement("button");
+                btnCompuesto.textContent = "Excel Compuesto";
+                btnCompuesto.addEventListener("click", () => mostrarExcel(nombre, parcial, "compuesto"));
+
+                card.appendChild(btnSimple);
+                card.appendChild(btnCompuesto);
+            }
+        } else {
+            // Caso simple (un solo Excel)
+            const btnExcel = document.createElement("button");
+            btnExcel.textContent = "Ver Excel";
+            btnExcel.addEventListener("click", () => mostrarExcel(nombre, parcial));
+            card.appendChild(btnExcel);
+        }
     }
 
-    if (nombre === "Trapecio") {
-        const btnSimple = document.createElement("button");
-        btnSimple.textContent = "Excel Simple";
-        btnSimple.addEventListener("click", () => mostrarExcel(nombre, parcial, "simple"));
-
-        const btnCompuesto = document.createElement("button");
-        btnCompuesto.textContent = "Excel Compuesto";
-        btnCompuesto.addEventListener("click", () => mostrarExcel(nombre, parcial, "compuesto"));
-
-        card.appendChild(btnSimple);
-        card.appendChild(btnCompuesto);
-    }
-
+    // Botón de descarga si existe (con mejor diseño)
     if (descargasExcel[nombre]) {
         const btnDescargar = document.createElement("button");
         btnDescargar.textContent = "Descargar Excel";
@@ -184,7 +201,9 @@ function mostrarMetodo(nombre, parcial) {
             const link = document.createElement("a");
             link.href = descargasExcel[nombre];
             link.download = nombre + ".xlsx";
+            document.body.appendChild(link);
             link.click();
+            document.body.removeChild(link);
         });
         card.appendChild(btnDescargar);
     }
@@ -215,7 +234,7 @@ function mostrarExcel(nombre, parcial, tipo = null) {
     }
 
     img.src = src || "";
-    img.alt = `Aquí está el excel de un ejercicio`;
+    img.alt = `Excel del método ${nombre}`;
     img.style.width = "100%";
     img.style.maxWidth = "600px";
     img.style.borderRadius = "8px";
